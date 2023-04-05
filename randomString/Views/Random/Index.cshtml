@@ -1,0 +1,16 @@
+﻿@model randomString.Models.RandomStrings
+@{
+	ViewData["Title"] = "Home Page";
+	var strings = Model;
+}
+
+<div class="text-center">
+	<a asp-controller="Home" asp-action="ToStrings">Назад</a>
+	@if (Model != null)
+	{
+		@for (int i = 0; i < Model.Count; i++)
+		{
+			<h1 class="display-4">@Model.Strings[i]</h1>
+		}
+	}
+</div>
